@@ -33,13 +33,17 @@ def create_pairs(names_with_gender):
 
 def display_pairs(pairs):
     for pair in pairs:
-        print_colorful_text(f"{pair[0]} and {pair[1]} are the best", ["1;31", "1;32", "1;33", "1;34", "1;35"])
+        print_colorful_text(f"{pair[0]} and {pair[1]} are best", ["1;31", "1;32", "1;33", "1;34", "1;35"])
+
+def display_author():
+    print_colorful_text("Subscribe To 'CA ADARSH YT' Youtube Channel", ["1;31", "1;32", "1;33", "1;34", "1;35"])
 
 def print_colorful_text(text, colors):
     words = text.split()
     for i, color in enumerate(colors):
         print(f"\033[{color}m{words[i]}\033[0m", end=' ')
     print()
+
 def main():
     num_names = int(input("Enter the number of names you want to input: "))
     names_with_gender = get_names_with_gender(num_names)
@@ -53,9 +57,9 @@ def main():
     print("\033[1;31mIt Is On The Way", arrowSymbol * 45, ">\033[0m")
     time.sleep(3)
     display_pairs(pairs)
+    display_author()
 
-
-print("\033[0mSubscribe To 'CA ADARSH YT' Youtube Channel")  # Reset color to default at the beginning
+# print("\033[0mSubscribe To 'CA ADARSH YT' Youtube Channel")  # Reset color to default at the beginning
 
 if __name__ == "__main__":
     main()
